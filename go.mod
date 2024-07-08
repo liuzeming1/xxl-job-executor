@@ -1,4 +1,4 @@
-module github.com/snail8501/xxl-job-executor.git
+module github.com/snail8501/xxl-job-executor
 
 go 1.22
 
