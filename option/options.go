@@ -13,6 +13,7 @@ const (
 type Option func(*ClientOptions)
 
 type ClientOptions struct {
+	IsEnable    bool          `yaml:"isEnable"`
 	ServerAddrs []string      `yaml:"serverAddrs"`
 	AccessToken string        `yaml:"accessToken"`
 	AppName     string        `yaml:"appName"`

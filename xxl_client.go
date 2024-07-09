@@ -14,8 +14,17 @@ type XxlClient struct {
 	requestHandler *handler.RequestProcess
 }
 
-func NewXxlClient(opts ...option.Option) *XxlClient {
-	clientOps := option.NewClientOptions(opts...)
+func NewXxlClient(clientOptions option.ClientOptions) *XxlClient {
+	clientOps := option.NewClientOptions(
+		option.WithServerAddrs(clientOptions.ServerAddrs...),
+		option.WithAccessToken(clientOptions.AccessToken),
+		option.WithAppName(clientOptions.AppName),
+		option.WithClientPort(clientOptions.ClientPort),
+		option.WithTimeout(clientOptions.Timeout),
+		option.WithBeatTime(clientOptions.BeatTime),
+		option.WithLogLevel(clientOptions.LogLevel),
+		option.WithDefaultOptions(),
+	)
 	executor := executor2.NewExecutor(
 		clientOps.AppName,
 		clientOps.ClientPort,
