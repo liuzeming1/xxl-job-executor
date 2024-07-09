@@ -11,18 +11,14 @@ package main
 import (
 	"context"
 	"fmt"
-	xxl "github.com/gongshen/xxl-job-executor"
-	"github.com/gongshen/xxl-job-executor/logger"
-	"github.com/gongshen/xxl-job-executor/option"
+	xxl "github.com/snail8501/xxl-job-executor"
+	"github.com/snail8501/xxl-job-executor/logger"
+	"github.com/snail8501/xxl-job-executor/option"
 	"log"
 )
 
 func main() {
-	client := xxl.NewXxlClient(
-		option.WithAppName("执行器的名字"),
-		option.WithClientPort(8080),
-		option.WithAdminAddress("xxl-job接入地址"),
-	)
+	client := xxl.NewXxlClient(option.ClientOptions{})
 	defer func() {
 		client.ExitApplication()
 		client.Close()
