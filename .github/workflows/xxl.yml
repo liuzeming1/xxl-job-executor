@@ -1,8 +1,5 @@
 name: xxl-job-test
-on:
-  push:
-  schedule:
-    - cron: "*/5 * * * *"
+on: [push]
 
 jobs:
   build:
