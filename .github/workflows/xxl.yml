@@ -1,7 +1,7 @@
 name: xxl-job-test
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   build:
