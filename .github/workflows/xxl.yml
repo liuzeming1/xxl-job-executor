@@ -18,7 +18,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd ./xxl-job-executor
           go mod tidy
 
       - name: Building
