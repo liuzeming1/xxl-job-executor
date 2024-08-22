@@ -22,5 +22,4 @@ jobs:
 
       - name: Building
         run: |
-          cd ./xxl-job-executor
           go build -o xxl-job-executor
